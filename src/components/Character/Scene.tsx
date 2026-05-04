@@ -66,7 +66,7 @@ const Scene = () => {
           setChar(character);
           scene.add(character);
           headBone = character.getObjectByName("spine006") || null;
-          screenLight = character.getObjectByName("screenlight") || null;
+          screenLight = (character.getObjectByName("screenlight") as THREE.Mesh) || null;
           progress.loaded().then(() => {
             setTimeout(() => {
               light.turnOnLights();
